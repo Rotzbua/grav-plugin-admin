@@ -279,7 +279,7 @@ $(document).on('click', '.media-collapser', (event) => {
   updateMediaCollapseStatus(event.currentTarget);
 });
 
-$(document).ready(() => {
+$(() => {
   $('.media-resizer').each((index, input) => {
     const storageLocation = input.dataset.storageLocation || 'grav-admin-pagemedia';
     const status = JSON.parse(Cookies.get(storageLocation) || '{}');

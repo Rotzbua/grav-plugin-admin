@@ -638,7 +638,7 @@ import $ from 'jquery';
         remodal.$bg.addClass(remodal.settings.modifier);
         remodal.$overlay.addClass(remodal.settings.modifier).show();
         remodal.$wrapper.show().scrollTop(0);
-        remodal.$modal.focus();
+        remodal.$modal.trigger('focus');
 
         syncWithAnimation(
             function() {
@@ -776,7 +776,7 @@ import $ from 'jquery';
         return instance;
     };
 
-    $(document).ready(function() {
+    $(function() {
 
         // data-remodal-target opens a modal window with the special Id
         $(document).on('click', '[data-' + PLUGIN_NAME + '-target]', function(e) {

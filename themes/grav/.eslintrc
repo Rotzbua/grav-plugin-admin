@@ -9,7 +9,10 @@
     "ecmaVersion": 6,
     "sourceType": "module"
   },
-
+  "plugins": [
+    "no-jquery"
+  ],
+  "extends": "plugin:no-jquery/deprecated",
   "rules": {
     "accessor-pairs": 2,
     "array-bracket-spacing": 0,

@@ -1,10 +1,10 @@
 import $ from 'jquery';
 
-$(document).ready(function() {
-    $('.copy-to-clipboard').click(function(event) {
+$(function() {
+    $('.copy-to-clipboard').on('click', function(event) {
         var $tempElement = $('<input>');
         $('body').append($tempElement);
-        $tempElement.val($(this).prev('input').val()).select();
+        $tempElement.val($(this).prev('input').val()).trigger('select');
         document.execCommand('Copy');
         $tempElement.remove();
 

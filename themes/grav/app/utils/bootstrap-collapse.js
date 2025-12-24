@@ -92,7 +92,7 @@ import jQuery from 'jquery';
         var scrollSize = $.camelCase(['scroll', dimension].join('-'));
 
         this.$element
-            .one('bsTransitionEnd', $.proxy(complete, this))
+            .one('bsTransitionEnd', complete.bind(this))
             .emulateTransitionEnd(Collapse.TRANSITION_DURATION)[dimension](this.$element[0][scrollSize]);
     };
 
@@ -129,7 +129,7 @@ import jQuery from 'jquery';
         if (!$.support.transition) return complete.call(this);
 
         this.$element[dimension](0)
-            .one('bsTransitionEnd', $.proxy(complete, this))
+            .one('bsTransitionEnd', complete.bind(this))
             .emulateTransitionEnd(Collapse.TRANSITION_DURATION);
     };
 
@@ -140,10 +140,10 @@ import jQuery from 'jquery';
     Collapse.prototype.getParent = function() {
         return $(this.options.parent)
             .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
-            .each($.proxy(function(i, element) {
+            .each(function(i, element) {
                 var $element = $(element);
                 this.addAriaAndCollapsedClass(getTargetFromTrigger($element), $element);
-            }, this))
+            }.bind(this))
             .end();
     };
 

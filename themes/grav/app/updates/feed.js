@@ -59,7 +59,7 @@ class Feed {
 }
 
 let feed = new Feed();
-$(document).ready(() => feed.refresh());
+$(() => feed.refresh());
 $(document).on('click', '[data-refresh="feed"]', (event) => {
     event.preventDefault();
     feed.refresh(true);

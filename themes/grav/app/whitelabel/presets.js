@@ -105,7 +105,7 @@ $.fn.hscrollarrows = function() {
             navPrev.on('click', prev);
             stateNavs();
 
-            $(elem).scroll(function() {
+            $(elem).on('scroll', function() {
                 if (!scrolling) {
                     clearTimeout(scrollTime);
                     scrollTime = setTimeout(function() {
@@ -114,7 +114,7 @@ $.fn.hscrollarrows = function() {
                 }
             });
 
-            $(window).resize(function() {
+            $(window).on('resize', function() {
                 clearTimeout(resizeTime);
                 resizeTime = setTimeout(function() {
                     revalidate();
@@ -164,6 +164,6 @@ $.fn.hscrollarrows = function() {
     });
 };
 
-$(document).ready(() => {
+$(() => {
     $('.jquery-horizontal-scroll').hscrollarrows();
 });

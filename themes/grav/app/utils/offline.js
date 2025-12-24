@@ -11,7 +11,7 @@ $(window).on('online', () => {
     offlineElement.slideUp();
 });
 
-$(document).ready(() => {
+$(() => {
     if (!isOnline) {
         offlineElement.slideDown();
     }

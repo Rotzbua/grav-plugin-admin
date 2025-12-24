@@ -107,7 +107,7 @@ $(function() {
         });
     };
 
-    $(document).ready(function() {
+    $(function() {
         refreshControls();
     });
 
